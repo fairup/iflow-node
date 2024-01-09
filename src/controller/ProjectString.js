@@ -4,7 +4,7 @@ const logger = require("@logger");
 const Project = {
   async findAll(req, res) {
     console.log("Find All Projects");
-    const resultProjects = await connection.query("SELECT * FROM project");
+    const resultProjects = await connection.query("SELECT * FROM project order by init desc");
     const projects = resultProjects.rows;
     res.json(projects);
   },
